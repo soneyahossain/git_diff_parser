@@ -1,0 +1,490 @@
+commit 6f752d1f1c575db477c63167b85508d807db463d
+Author: Jeremy Lainé <jeremy.laine@m4x.org>
+Date:   Mon Nov 4 14:13:56 2019 +0100
+
+    Add more type hints
+
+diff --git a/aiortc/mediastreams.py b/aiortc/mediastreams.py
+index 014047c..02e1053 100644
+--- a/aiortc/mediastreams.py
++++ b/aiortc/mediastreams.py
+@@ -2,6 +2,7 @@ import asyncio
+ import fractions
+ import time
+ import uuid
++from abc import ABCMeta, abstractmethod
+ from typing import Tuple
+ 
+ from av import AudioFrame, VideoFrame
+@@ -26,13 +27,15 @@ class MediaStreamError(Exception):
+     pass
+ 
+ 
+-class MediaStreamTrack(AsyncIOEventEmitter):
++class MediaStreamTrack(AsyncIOEventEmitter, metaclass=ABCMeta):
+     """
+     A single media track within a stream.
+ 
+     See :class:`AudioStreamTrack` and :class:`VideoStreamTrack`.
+     """
+ 
++    kind = "unknown"
++
+     def __init__(self) -> None:
+         super().__init__()
+         self.__ended = False
+@@ -49,6 +52,10 @@ class MediaStreamTrack(AsyncIOEventEmitter):
+     def readyState(self) -> str:
+         return "ended" if self.__ended else "live"
+ 
++    @abstractmethod
++    async def recv(self) -> Frame:
++        pass
++
+     def stop(self) -> None:
+         if not self.__ended:
+             self.__ended = True
+diff --git a/aiortc/rtcpeerconnection.py b/aiortc/rtcpeerconnection.py
+index 1f0d9e8..72c8cdd 100644
+--- a/aiortc/rtcpeerconnection.py
++++ b/aiortc/rtcpeerconnection.py
+@@ -10,6 +10,7 @@ from . import clock, rtp, sdp
+ from .codecs import CODECS, HEADER_EXTENSIONS, is_rtx
+ from .events import RTCTrackEvent
+ from .exceptions import InternalError, InvalidAccessError, InvalidStateError
++from .mediastreams import MediaStreamTrack
+ from .rtcconfiguration import RTCConfiguration
+ from .rtcdatachannel import RTCDataChannel, RTCDataChannelParameters
+ from .rtcdtlstransport import RTCCertificate, RTCDtlsParameters, RTCDtlsTransport
+@@ -276,7 +277,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+         self.__cname = "{%s}" % uuid.uuid4()
+         self.__configuration = configuration or RTCConfiguration()
+         self.__iceTransports = set()  # type: Set[RTCIceTransport]
+-        self.__initialOfferer = None
++        self.__initialOfferer = None  # type: Optional[bool]
+         self.__remoteDtls = (
+             {}
+         )  # type: Dict[Union[RTCRtpTransceiver, RTCSctpTransport], RTCDtlsParameters]
+@@ -363,7 +364,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+             iceTransport = self.__sctp.transport.transport
+             iceTransport.addRemoteCandidate(candidate)
+ 
+-    def addTrack(self, track):
++    def addTrack(self, track: MediaStreamTrack) -> RTCRtpSender:
+         """
+         Add a :class:`MediaStreamTrack` to the set of media tracks which
+         will be transmitted to the remote peer.
+@@ -390,14 +391,16 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+         )
+         return transceiver.sender
+ 
+-    def addTransceiver(self, trackOrKind, direction="sendrecv"):
++    def addTransceiver(
++        self, trackOrKind: Union[str, MediaStreamTrack], direction: str = "sendrecv"
++    ) -> RTCRtpTransceiver:
+         """
+         Add a new :class:`RTCRtpTransceiver`.
+         """
+         self.__assertNotClosed()
+ 
+         # determine track or kind
+-        if hasattr(trackOrKind, "kind"):
++        if isinstance(trackOrKind, MediaStreamTrack):
+             kind = trackOrKind.kind
+             track = trackOrKind
+         else:
+@@ -629,40 +632,44 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+ 
+         return wrap_session_description(description)
+ 
+-    def getReceivers(self):
++    def getReceivers(self) -> List[RTCRtpReceiver]:
+         """
+         Returns the list of :class:`RTCRtpReceiver` objects that are currently
+         attached to the connection.
+         """
+         return list(map(lambda x: x.receiver, self.__transceivers))
+ 
+-    def getSenders(self):
++    def getSenders(self) -> List[RTCRtpSender]:
+         """
+         Returns the list of :class:`RTCRtpSender` objects that are currently
+         attached to the connection.
+         """
+         return list(map(lambda x: x.sender, self.__transceivers))
+ 
+-    async def getStats(self):
++    async def getStats(self) -> RTCStatsReport:
+         """
+         Returns statistics for the connection.
+ 
+         :rtype: :class:`RTCStatsReport`
+         """
+         merged = RTCStatsReport()
+-        coros = [x.getStats() for x in (self.getSenders() + self.getReceivers())]
++        coros = [x.getStats() for x in self.getSenders()] + [
++            x.getStats() for x in self.getReceivers()
++        ]
+         for report in await asyncio.gather(*coros):
+             merged.update(report)
+         return merged
+ 
+-    def getTransceivers(self):
++    def getTransceivers(self) -> List[RTCRtpTransceiver]:
+         """
+         Returns the list of :class:`RTCRtpTransceiver` objects that are currently
+         attached to the connection.
+         """
+         return list(self.__transceivers)
+ 
+-    async def setLocalDescription(self, sessionDescription):
++    async def setLocalDescription(
++        self, sessionDescription: RTCSessionDescription
++    ) -> None:
+         """
+         Change the local description associated with the connection.
+ 
+@@ -901,7 +908,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+                         self.__sctpRemoteCaps, self.__sctpRemotePort
+                     )
+ 
+-    async def __gather(self):
++    async def __gather(self) -> None:
+         coros = map(lambda t: t.iceGatherer.gather(), self.__iceTransports)
+         await asyncio.gather(*coros)
+ 
+@@ -909,7 +916,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+         if self.__isClosed:
+             raise InvalidStateError("RTCPeerConnection is closed")
+ 
+-    def __assertTrackHasNoSender(self, track):
++    def __assertTrackHasNoSender(self, track: MediaStreamTrack) -> None:
+         for sender in self.getSenders():
+             if sender.track == track:
+                 raise InvalidAccessError("Track already has a sender")
+diff --git a/aiortc/rtcrtpsender.py b/aiortc/rtcrtpsender.py
+index 59d2eff..648068f 100644
+--- a/aiortc/rtcrtpsender.py
++++ b/aiortc/rtcrtpsender.py
+@@ -3,13 +3,13 @@ import logging
+ import random
+ import time
+ import uuid
+-from typing import Dict, List, Optional
++from typing import Dict, List, Optional, Union
+ 
+ from . import clock, rtp
+ from .codecs import get_capabilities, get_encoder, is_rtx
+ from .codecs.base import Encoder
+ from .exceptions import InvalidStateError
+-from .mediastreams import MediaStreamError
++from .mediastreams import MediaStreamError, MediaStreamTrack
+ from .rtcrtpparameters import RTCRtpCodecParameters, RTCRtpSendParameters
+ from .rtp import (
+     RTCP_PSFB_APP,
+@@ -52,11 +52,11 @@ class RTCRtpSender:
+     :param transport: An :class:`RTCDtlsTransport`.
+     """
+ 
+-    def __init__(self, trackOrKind, transport) -> None:
++    def __init__(self, trackOrKind: Union[MediaStreamTrack, str], transport) -> None:
+         if transport.state == "closed":
+             raise InvalidStateError
+ 
+-        if hasattr(trackOrKind, "kind"):
++        if isinstance(trackOrKind, MediaStreamTrack):
+             self.__kind = trackOrKind.kind
+             self.replaceTrack(trackOrKind)
+         else:
+@@ -97,7 +97,7 @@ class RTCRtpSender:
+         return self.__kind
+ 
+     @property
+-    def track(self):
++    def track(self) -> MediaStreamTrack:
+         """
+         The :class:`MediaStreamTrack` which is being handled by the sender.
+         """
+@@ -121,7 +121,7 @@ class RTCRtpSender:
+         """
+         return get_capabilities(kind)
+ 
+-    async def getStats(self):
++    async def getStats(self) -> RTCStatsReport:
+         """
+         Returns statistics about the RTP sender.
+ 
+@@ -148,7 +148,7 @@ class RTCRtpSender:
+ 
+         return self.__stats
+ 
+-    def replaceTrack(self, track) -> None:
++    def replaceTrack(self, track: Optional[MediaStreamTrack]) -> None:
+         self.__track = track
+         if track is not None:
+             self._track_id = track.id
+diff --git a/tests/test_rtcpeerconnection.py b/tests/test_rtcpeerconnection.py
+index 880e70c..5817976 100644
+--- a/tests/test_rtcpeerconnection.py
++++ b/tests/test_rtcpeerconnection.py
+@@ -6,7 +6,7 @@ import aioice.stun
+ 
+ from aiortc import RTCIceCandidate, RTCPeerConnection, RTCSessionDescription
+ from aiortc.exceptions import InternalError, InvalidAccessError, InvalidStateError
+-from aiortc.mediastreams import AudioStreamTrack, MediaStreamTrack, VideoStreamTrack
++from aiortc.mediastreams import AudioStreamTrack, VideoStreamTrack
+ from aiortc.rtcpeerconnection import filter_preferred_codecs, find_common_codecs
+ from aiortc.rtcrtpparameters import (
+     RTCRtcpFeedback,
+@@ -23,7 +23,7 @@ LONG_DATA = b"\xff" * 2000
+ STRIP_CANDIDATES_RE = re.compile("^a=(candidate:.*|end-of-candidates)\r\n", re.M)
+ 
+ 
+-class BogusStreamTrack(MediaStreamTrack):
++class BogusStreamTrack(AudioStreamTrack):
+     kind = "bogus"
+commit 6f752d1f1c575db477c63167b85508d807db463dfffff
+Author: Jeremy Lainé <jeremy.laine@m4x.orgggggg>
+Date:   Mon Nov 4 14:13:56 2019 +0100
+
+    Add more type hints
+
+diff --git a/aiortc/mediastreams.py b/aiortc/mediastreams.py
+index 014047c..02e1053 100644
+--- a/aiortc/mediastreams.py
++++ b/aiortc/mediastreams.py
+@@ -2,6 +2,7 @@ import asyncio
+ import fractions
+ import time
+ import uuid
++from abc import ABCMeta, abstractmethod
+ from typing import Tuple
+
+ from av import AudioFrame, VideoFrame
+@@ -26,13 +27,15 @@ class MediaStreamError(Exception):
+     pass
+
+
+-class MediaStreamTrack(AsyncIOEventEmitter):
++class MediaStreamTrack(AsyncIOEventEmitter, metaclass=ABCMeta):
+     """
+     A single media track within a stream.
+
+     See :class:`AudioStreamTrack` and :class:`VideoStreamTrack`.
+     """
+
++    kind = "unknown"
++
+     def __init__(self) -> None:
+         super().__init__()
+         self.__ended = False
+@@ -49,6 +52,10 @@ class MediaStreamTrack(AsyncIOEventEmitter):
+     def readyState(self) -> str:
+         return "ended" if self.__ended else "live"
+
++    @abstractmethod
++    async def recv(self) -> Frame:
++        pass
++
+     def stop(self) -> None:
+         if not self.__ended:
+             self.__ended = True
+diff --git a/aiortc/rtcpeerconnection.py b/aiortc/rtcpeerconnection.py
+index 1f0d9e8..72c8cdd 100644
+--- a/aiortc/rtcpeerconnection.py
++++ b/aiortc/rtcpeerconnection.py
+@@ -10,6 +10,7 @@ from . import clock, rtp, sdp
+ from .codecs import CODECS, HEADER_EXTENSIONS, is_rtx
+ from .events import RTCTrackEvent
+ from .exceptions import InternalError, InvalidAccessError, InvalidStateError
++from .mediastreams import MediaStreamTrack
+ from .rtcconfiguration import RTCConfiguration
+ from .rtcdatachannel import RTCDataChannel, RTCDataChannelParameters
+ from .rtcdtlstransport import RTCCertificate, RTCDtlsParameters, RTCDtlsTransport
+@@ -276,7 +277,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+         self.__cname = "{%s}" % uuid.uuid4()
+         self.__configuration = configuration or RTCConfiguration()
+         self.__iceTransports = set()  # type: Set[RTCIceTransport]
+-        self.__initialOfferer = None
++        self.__initialOfferer = None  # type: Optional[bool]
+         self.__remoteDtls = (
+             {}
+         )  # type: Dict[Union[RTCRtpTransceiver, RTCSctpTransport], RTCDtlsParameters]
+@@ -363,7 +364,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+             iceTransport = self.__sctp.transport.transport
+             iceTransport.addRemoteCandidate(candidate)
+
+-    def addTrack(self, track):
++    def addTrack(self, track: MediaStreamTrack) -> RTCRtpSender:
+         """
+         Add a :class:`MediaStreamTrack` to the set of media tracks which
+         will be transmitted to the remote peer.
+@@ -390,14 +391,16 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+         )
+         return transceiver.sender
+
+-    def addTransceiver(self, trackOrKind, direction="sendrecv"):
++    def addTransceiver(
++        self, trackOrKind: Union[str, MediaStreamTrack], direction: str = "sendrecv"
++    ) -> RTCRtpTransceiver:
+         """
+         Add a new :class:`RTCRtpTransceiver`.
+         """
+         self.__assertNotClosed()
+
+         # determine track or kind
+-        if hasattr(trackOrKind, "kind"):
++        if isinstance(trackOrKind, MediaStreamTrack):
+             kind = trackOrKind.kind
+             track = trackOrKind
+         else:
+@@ -629,40 +632,44 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+
+         return wrap_session_description(description)
+
+-    def getReceivers(self):
++    def getReceivers(self) -> List[RTCRtpReceiver]:
+         """
+         Returns the list of :class:`RTCRtpReceiver` objects that are currently
+         attached to the connection.
+         """
+         return list(map(lambda x: x.receiver, self.__transceivers))
+
+-    def getSenders(self):
++    def getSenders(self) -> List[RTCRtpSender]:
+         """
+         Returns the list of :class:`RTCRtpSender` objects that are currently
+         attached to the connection.
+         """
+         return list(map(lambda x: x.sender, self.__transceivers))
+
+-    async def getStats(self):
++    async def getStats(self) -> RTCStatsReport:
+         """
+         Returns statistics for the connection.
+
+         :rtype: :class:`RTCStatsReport`
+         """
+         merged = RTCStatsReport()
+-        coros = [x.getStats() for x in (self.getSenders() + self.getReceivers())]
++        coros = [x.getStats() for x in self.getSenders()] + [
++            x.getStats() for x in self.getReceivers()
++        ]
+         for report in await asyncio.gather(*coros):
+             merged.update(report)
+         return merged
+
+-    def getTransceivers(self):
++    def getTransceivers(self) -> List[RTCRtpTransceiver]:
+         """
+         Returns the list of :class:`RTCRtpTransceiver` objects that are currently
+         attached to the connection.
+         """
+         return list(self.__transceivers)
+
+-    async def setLocalDescription(self, sessionDescription):
++    async def setLocalDescription(
++        self, sessionDescription: RTCSessionDescription
++    ) -> None:
+         """
+         Change the local description associated with the connection.
+
+@@ -901,7 +908,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+                         self.__sctpRemoteCaps, self.__sctpRemotePort
+                     )
+
+-    async def __gather(self):
++    async def __gather(self) -> None:
+         coros = map(lambda t: t.iceGatherer.gather(), self.__iceTransports)
+         await asyncio.gather(*coros)
+
+@@ -909,7 +916,7 @@ class RTCPeerConnection(AsyncIOEventEmitter):
+         if self.__isClosed:
+             raise InvalidStateError("RTCPeerConnection is closed")
+
+-    def __assertTrackHasNoSender(self, track):
++    def __assertTrackHasNoSender(self, track: MediaStreamTrack) -> None:
+         for sender in self.getSenders():
+             if sender.track == track:
+                 raise InvalidAccessError("Track already has a sender")
+diff --git a/aiortc/rtcrtpsender.py b/aiortc/rtcrtpsender.py
+index 59d2eff..648068f 100644
+--- a/aiortc/rtcrtpsender.py
++++ b/aiortc/rtcrtpsender.py
+@@ -3,13 +3,13 @@ import logging
+ import random
+ import time
+ import uuid
+-from typing import Dict, List, Optional
++from typing import Dict, List, Optional, Union
+
+ from . import clock, rtp
+ from .codecs import get_capabilities, get_encoder, is_rtx
+ from .codecs.base import Encoder
+ from .exceptions import InvalidStateError
+-from .mediastreams import MediaStreamError
++from .mediastreams import MediaStreamError, MediaStreamTrack
+ from .rtcrtpparameters import RTCRtpCodecParameters, RTCRtpSendParameters
+ from .rtp import (
+     RTCP_PSFB_APP,
+@@ -52,11 +52,11 @@ class RTCRtpSender:
+     :param transport: An :class:`RTCDtlsTransport`.
+     """
+
+-    def __init__(self, trackOrKind, transport) -> None:
++    def __init__(self, trackOrKind: Union[MediaStreamTrack, str], transport) -> None:
+         if transport.state == "closed":
+             raise InvalidStateError
+
+-        if hasattr(trackOrKind, "kind"):
++        if isinstance(trackOrKind, MediaStreamTrack):
+             self.__kind = trackOrKind.kind
+             self.replaceTrack(trackOrKind)
+         else:
+@@ -97,7 +97,7 @@ class RTCRtpSender:
+         return self.__kind
+
+     @property
+-    def track(self):
++    def track(self) -> MediaStreamTrack:
+         """
+         The :class:`MediaStreamTrack` which is being handled by the sender.
+         """
+@@ -121,7 +121,7 @@ class RTCRtpSender:
+         """
+         return get_capabilities(kind)
+
+-    async def getStats(self):
++    async def getStats(self) -> RTCStatsReport:
+         """
+         Returns statistics about the RTP sender.
+
+@@ -148,7 +148,7 @@ class RTCRtpSender:
+
+         return self.__stats
+
+-    def replaceTrack(self, track) -> None:
++    def replaceTrack(self, track: Optional[MediaStreamTrack]) -> None:
+         self.__track = track
+         if track is not None:
+             self._track_id = track.id
+diff --git a/tests/test_rtcpeerconnection.py b/tests/test_rtcpeerconnection.py
+index 880e70c..5817976 100644
+--- a/tests/test_rtcpeerconnection.py
++++ b/tests/test_rtcpeerconnection.py
+@@ -6,7 +6,7 @@ import aioice.stun
+
+ from aiortc import RTCIceCandidate, RTCPeerConnection, RTCSessionDescription
+ from aiortc.exceptions import InternalError, InvalidAccessError, InvalidStateError
+-from aiortc.mediastreams import AudioStreamTrack, MediaStreamTrack, VideoStreamTrack
++from aiortc.mediastreams import AudioStreamTrack, VideoStreamTrack
+ from aiortc.rtcpeerconnection import filter_preferred_codecs, find_common_codecs
+ from aiortc.rtcrtpparameters import (
+     RTCRtcpFeedback,
+@@ -23,7 +23,7 @@ LONG_DATA = b"\xff" * 2000
+ STRIP_CANDIDATES_RE = re.compile("^a=(candidate:.*|end-of-candidates)\r\n", re.M)
+
+
+-class BogusStreamTrack(MediaStreamTrack):
++class BogusStreamTrack(AudioStreamTrack):
+     kind = "bogus"
