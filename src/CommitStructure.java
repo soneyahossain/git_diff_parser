@@ -9,29 +9,34 @@ public class CommitStructure {
     ArrayList<Diff> diffList=new  ArrayList<Diff>() ;
     boolean typeHintAdded=false;
 
-
     void isTypeHintAdded()
     {
         for(Diff e: diffList){
             e.getAllFunctionDef();
-            if( e.typeHintAdded)
+            if(e.typeHintAdded)
                 typeHintAdded=true;
         }
     }
+    void clearMap()
+    {
+        for(Diff e: diffList){
+            e.functionDefHashMap.clear();
+        }
+    }
+
 
     boolean getTypeHintInfo()
     {
         this.isTypeHintAdded();
         return typeHintAdded;
-
     }
 
     void toString_()
     {
-        //System.out.println("commit "+commit_id);
-        //System.out.println("Author=============="+Author);
-        //System.out.println("Date=============="+Date);
-        //System.out.println("diffList=============="+diffList.size());
+        System.out.println("commit "+commit_id);
+        System.out.println("Author=============="+Author);
+        System.out.println("Date=============="+Date);
+        System.out.println("diffList=============="+diffList.size());
 
     }
 }
