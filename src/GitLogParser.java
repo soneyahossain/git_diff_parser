@@ -1,7 +1,7 @@
 
 import java.io.*;
 import java.util.ArrayList;
-public class test {
+public class GitLogParser {
 
     static  ArrayList<CommitStructure> parseCommit() throws IOException
     {
