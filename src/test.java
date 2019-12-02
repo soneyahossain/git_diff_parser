@@ -7,7 +7,7 @@ public class test {
     {
         ArrayList<CommitStructure> commitStructureList = new ArrayList<CommitStructure>();
         CommitStructure commitStructure = new CommitStructure();
-        File file = new File("log.txt");
+        File file = new File("/u/sh7hv/IdeaProjects/git_diff_parser/log1.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         boolean isFirstCommit=true;
 
@@ -71,13 +71,13 @@ public class test {
             boolean typeHintAdded= e.getTypeHintInfo();
             if(typeHintAdded)
             {
-                typeHintedCommitInfo.add(e.Date+","+e.commit_id+"\n");
+                typeHintedCommitInfo.add(e.Date+" ,commit id: "+e.commit_id+"\n");
             }
         }
         for(CommitStructure e: cs){
             e.clearMap();
         }
-        System.out.println("type hint info=============="+typeHintedCommitInfo.toString());
+        System.out.println("type hint info==============\n"+typeHintedCommitInfo.toString());
 
     }
 }

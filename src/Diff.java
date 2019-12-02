@@ -183,10 +183,10 @@ public class Diff {
                     }
                     if (typeHintAdded) //&& localtypeHintAdded)
                     {
-                        System.out.println("type hin info------------------------------------------------------------------------------------------------start");
+                        System.out.println("type hint info------------------------------------------------------------------------------------------------start");
                         fun_def_before.print();
                         fun_def_after.print();
-                        System.out.println("type hin info------------------------------------------------------------------------------------------------end");
+                        System.out.println("type hint info------------------------------------------------------------------------------------------------end");
 
                         //localtypeHintAdded =false;
                         break;  // as we don't wanna process if we already got type hinting
