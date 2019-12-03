@@ -12,7 +12,7 @@ public class CommitStructure {
     void isTypeHintAdded()
     {
         for(Diff e: diffList){
-            e.getAllFunctionDef();
+            e.getAllFunctionDef(commit_id);
             if(e.typeHintAdded)
                 typeHintAdded=true;
         }

@@ -5,9 +5,9 @@ public class Diff {
     String diff; // diff content
     HashMap<String, FunctionDef> functionDefHashMap = new  HashMap<String, FunctionDef>();  // for keeping all function def inside a diff
     boolean typeHintAdded=false;
-    //boolean localtypeHintAdded =false;
+    boolean localtypeHintAdded =false;
 
-    public void getAllFunctionDef()
+    public void getAllFunctionDef(String commitID)
     {
         String[] diff_lines = diff.split(System.getProperty("line.separator")); // getting all the lines inside a diff
 
@@ -178,18 +178,25 @@ public class Diff {
                         if (fun_def_before.returnType.equals("") && !fun_def_after.returnType.equals("")) {
                             //System.out.println("hint added");
                             typeHintAdded = true;
-                            //localtypeHintAdded = true;
+                            localtypeHintAdded = true;
                         }
                     }
-                    if (typeHintAdded) //&& localtypeHintAdded)
+
+
+
+                    if (localtypeHintAdded) //&& localtypeHintAdded)
                     {
+
+
                         System.out.println("type hint info------------------------------------------------------------------------------------------------start");
+                        System.out.println("Commit ID: "+commitID);
+
                         fun_def_before.print();
                         fun_def_after.print();
                         System.out.println("type hint info------------------------------------------------------------------------------------------------end");
 
-                        //localtypeHintAdded =false;
-                        break;  // as we don't wanna process if we already got type hinting
+                        localtypeHintAdded =false;
+                       // break;  // as we don't wanna process if we already got type hinting
                     }
                 }
             }

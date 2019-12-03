@@ -7,7 +7,7 @@ public class GitLogParser {
     {
         ArrayList<CommitStructure> commitStructureList = new ArrayList<CommitStructure>();
         CommitStructure commitStructure = new CommitStructure();
-        File file = new File("/u/sh7hv/IdeaProjects/git_diff_parser/log1.txt");
+        File file = new File("/u/sh7hv/IdeaProjects/git_diff_parser/log_aiortc.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         boolean isFirstCommit=true;
 
