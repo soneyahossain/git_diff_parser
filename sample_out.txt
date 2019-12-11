@@ -1,0 +1,1754 @@
+total commits==============1019
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def addTrack ( self: ,track: , ) ->:
+def addTrack ( self: ,track:  MediaStreamTrack, ) ->RTCRtpSender::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def addTransceiver ( direction="sendrecv": ,self: ,trackOrKind: , ) ->:
+def addTransceiver ( self: ,trackOrKind:  Union[str,MediaStreamTrack]: ,direction:  str = "sendrecv", ) ->RTCRtpTransceiver::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def getReceivers ( self: , ) ->:
+def getReceivers ( self: , ) ->List[RTCRtpReceiver]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def getSenders ( self: , ) ->:
+def getSenders ( self: , ) ->List[RTCRtpSender]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def getTransceivers ( self: , ) ->:
+def getTransceivers ( self: , ) ->List[RTCRtpTransceiver]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def __assertTrackHasNoSender ( self: ,track: , ) ->:
+def __assertTrackHasNoSender ( self: ,track:  MediaStreamTrack, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 6f752d1f1c575db477c63167b85508d807db463d
+def track ( self: , ) ->:
+def track ( self: , ) ->MediaStreamTrack::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ddf5798f2432f4b2e4bc00691a766f464275e9fa
+def state ( self: , ) ->:
+def state ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ddf5798f2432f4b2e4bc00691a766f464275e9fa
+def addIceCandidate ( candidate: ,self: , ) ->:
+def addIceCandidate ( candidate:  RTCIceCandidate,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def get_decoder ( codec:  RTCRtpCodecParameters, ) ->:
+def get_decoder ( codec:  RTCRtpCodecParameters, ) ->Decoder::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def get_encoder ( codec:  RTCRtpCodecParameters, ) ->:
+def get_encoder ( codec:  RTCRtpCodecParameters, ) ->Encoder::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def id ( self: , ) ->:
+def id ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def readyState ( self: , ) ->:
+def readyState ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def stop ( self: , ) ->:
+def stop ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: ,timestamp=None: , ) ->:
+def __init__ ( self: ,timestamp:  Optional[int] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( arrival_time: ,size: ,self: ,timestamp: , ) ->:
+def __init__ ( arrival_time:  int,size:  int,self: ,timestamp:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( timestamp_to_ms: ,group_length: ,self: , ) ->:
+def __init__ ( timestamp_to_ms:  float,group_length:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def compute_deltas ( arrival_time: ,packet_size: ,self: ,timestamp: , ) ->:
+def compute_deltas ( arrival_time:  int,packet_size:  int,self: ,timestamp:  int, ) ->Optional[InterArrivalDelta]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def belongs_to_burst ( arrival_time: ,self: ,timestamp: , ) ->:
+def belongs_to_burst ( arrival_time:  int,self: ,timestamp:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def new_timestamp_group ( arrival_time: ,self: ,timestamp: , ) ->:
+def new_timestamp_group ( arrival_time:  int,self: ,timestamp:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def packet_out_of_order ( self: ,timestamp: , ) ->:
+def packet_out_of_order ( self: ,timestamp:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def detect ( num_of_deltas: ,offset: ,timestamp_delta_ms: ,now_ms: ,self: , ) ->:
+def detect ( num_of_deltas:  int,offset:  float,timestamp_delta_ms:  float,now_ms:  int,self: , ) ->BandwidthUsage::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def state ( self: , ) ->:
+def state ( self: , ) ->BandwidthUsage::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def update_threshold ( modified_offset: ,now_ms: ,self: , ) ->:
+def update_threshold ( modified_offset:  float,now_ms:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def num_of_deltas ( self: , ) ->:
+def num_of_deltas ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def offset ( self: , ) ->:
+def offset ( self: , ) ->float::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def update_min_frame_period ( self: ,ts_delta: , ) ->:
+def update_min_frame_period ( self: ,ts_delta:  float, ) ->float::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def update_noise_estimate ( self: ,residual: ,ts_delta: , ) ->:
+def update_noise_estimate ( self: ,residual:  float,ts_delta:  float, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( count=0: ,self: ,value=0: , ) ->:
+def __init__ ( count:  int = 0,self: ,value:  int = 0, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __eq__ ( other: ,self: , ) ->:
+def __eq__ ( other: ,self: , ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( window_size: ,self: ,scale=8000: , ) ->:
+def __init__ ( window_size:  int,self: ,scale:  int = 8000, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def add ( now_ms: ,self: ,value: , ) ->:
+def add ( now_ms:  int,self: ,value:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def rate ( now_ms: ,self: , ) ->:
+def rate ( now_ms:  int,self: , ) ->Optional[int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def reset ( self: , ) ->:
+def reset ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _erase_old ( now_ms: ,self: , ) ->:
+def _erase_old ( now_ms:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def add ( ssrc: ,self: ,arrival_time_ms: ,payload_size: ,abs_send_time: , ) ->:
+def add ( ssrc:  int,self: ,arrival_time_ms:  int,payload_size:  int,abs_send_time:  int, ) ->Optional[Tuple[int, List[int]]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def register_sender ( sender: ,ssrc: ,self: , ) ->:
+def register_sender ( sender: ,ssrc:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def route_rtcp ( self: ,packet: , ) ->:
+def route_rtcp ( self: ,packet:  AnyRtcpPacket, ) ->Set::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def add_recipient ( recipient: , ) ->:
+def add_recipient ( recipient: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def route_rtp ( self: ,packet: , ) ->:
+def route_rtp ( self: ,packet:  RtpPacket, ) ->Optional[Any]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def unregister_receiver ( receiver: ,self: , ) ->:
+def unregister_receiver ( receiver: ,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def unregister_sender ( sender: ,self: , ) ->:
+def unregister_sender ( sender: ,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __discard ( d: ,self: ,value: , ) ->:
+def __discard ( d:  Dict,self: ,value:  Any, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( certificates: ,self: ,transport: , ) ->:
+def __init__ ( certificates:  List[RTCCertificate],self: ,transport:  RTCIceTransport, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _get_stats ( self: , ) ->:
+def _get_stats ( self: , ) ->RTCStatsReport::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _register_data_receiver ( receiver: ,self: , ) ->:
+def _register_data_receiver ( receiver: ,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _register_rtp_receiver ( receiver: ,self: ,parameters:  RTCRtpReceiveParameters, ) ->:
+def _register_rtp_receiver ( receiver: ,self: ,parameters:  RTCRtpReceiveParameters, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _register_rtp_sender ( sender: ,self: ,parameters:  RTCRtpSendParameters, ) ->:
+def _register_rtp_sender ( sender: ,self: ,parameters:  RTCRtpSendParameters, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _unregister_data_receiver ( receiver: ,self: , ) ->:
+def _unregister_data_receiver ( receiver: ,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _unregister_rtp_receiver ( receiver: ,self: , ) ->:
+def _unregister_rtp_receiver ( receiver: ,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _unregister_rtp_sender ( sender: ,self: , ) ->:
+def _unregister_rtp_sender ( sender: ,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( kind: ,self: , ) ->:
+def __init__ ( kind:  str,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def transport ( self: , ) ->:
+def transport ( self: , ) ->RTCDtlsTransport::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def getSynchronizationSources ( self: , ) ->:
+def getSynchronizationSources ( self: , ) ->List[RTCRtpSynchronizationSource]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _handle_disconnect ( self: , ) ->:
+def _handle_disconnect ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __stop_decoder ( self: , ) ->:
+def __stop_decoder ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def add_chunk ( self: ,chunk: , ) ->:
+def add_chunk ( self: ,chunk:  DataChunk, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def pop_messages ( self: , ) ->:
+def pop_messages ( self: , ) ->Iterator[Tuple[int, int, bytes]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def prune_chunks ( self: ,tsn: , ) ->:
+def prune_chunks ( self: ,tsn:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def __init__ ( port=5000: ,self: ,transport: , ) ->:
+def __init__ ( port:  int = 5000,self: ,transport:  RTCDtlsTransport, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _get_extensions ( self: ,params: , ) ->:
+def _get_extensions ( bytes]]: ,self: ,params:  List[Tuple[int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _get_inbound_stream ( stream_id: ,self: , ) ->:
+def _get_inbound_stream ( stream_id:  int,self: , ) ->InboundStream::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _get_timestamp ( self: , ) ->:
+def _get_timestamp ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _mark_received ( self: ,tsn: , ) ->:
+def _mark_received ( self: ,tsn:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _update_rto ( R: ,self: , ) ->:
+def _update_rto ( R:  float,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def _data_channel_send ( data: ,channel: ,self: , ) ->:
+def _data_channel_send ( data:  bytes,channel:  RTCDataChannel,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def unpack_remb_fci ( data: , ) ->:
+def unpack_remb_fci ( data:  bytes, ) ->Tuple[int, List[int]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: 4c79547718f97e063240b087fc14c0a350f2c02c
+def add ( stats: ,self: , ) ->:
+def add ( stats:  RTCStats,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def get_capabilities ( kind: , ) ->:
+def get_capabilities ( kind:  str, ) ->RTCRtpCapabilities::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( send_open=True: ,self: ,transport: ,parameters: , ) ->:
+def __init__ ( send_open:  bool = True,self: ,transport: ,parameters:  RTCDataChannelParameters, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def bufferedAmount ( self: , ) ->:
+def bufferedAmount ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def bufferedAmountLowThreshold ( self: , ) ->:
+def bufferedAmountLowThreshold ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def bufferedAmountLowThreshold ( self: ,value: , ) ->:
+def bufferedAmountLowThreshold ( self: ,value:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def negotiated ( self: , ) ->:
+def negotiated ( self: , ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def id ( self: , ) ->:
+def id ( self: , ) ->Optional[int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def label ( self: , ) ->:
+def label ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def ordered ( self: , ) ->:
+def ordered ( self: , ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def maxPacketLifeTime ( self: , ) ->:
+def maxPacketLifeTime ( self: , ) ->Optional[int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def maxRetransmits ( self: , ) ->:
+def maxRetransmits ( self: , ) ->Optional[int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def protocol ( self: , ) ->:
+def protocol ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def readyState ( self: , ) ->:
+def readyState ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def close ( self: , ) ->:
+def close ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def send ( data: ,self: , ) ->:
+def send ( data:  Union[bytes,self: ,str]: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _addBufferedAmount ( amount: ,self: , ) ->:
+def _addBufferedAmount ( amount:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _setId ( self: ,id: , ) ->:
+def _setId ( self: ,id:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _setReadyState ( self: ,state: , ) ->:
+def _setReadyState ( self: ,state:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __log_debug ( msg: ,self: ,*args: , ) ->:
+def __log_debug ( msg:  str,self: ,*args: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def get_srtp_key_salt ( src: ,idx: , ) ->:
+def get_srtp_key_salt ( src: ,idx:  int, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def getLocalParameters ( self: , ) ->:
+def getLocalParameters ( self: , ) ->RTCDtlsParameters::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _set_state ( self: ,state: , ) ->:
+def _set_state ( self: ,state:  State, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __log_debug ( msg: ,self: ,*args: , ) ->:
+def __log_debug ( msg:  str,self: ,*args: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __log_warning ( msg: ,self: ,*args: , ) ->:
+def __log_warning ( msg:  str,self: ,*args: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def connection_kwargs ( servers: , ) ->:
+def connection_kwargs ( servers:  List[RTCIceServer], ) ->Dict[str, Any]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def parse_stun_turn_uri ( uri: , ) ->:
+def parse_stun_turn_uri ( uri:  str, ) ->Dict[str, Any]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( iceServers=None: ,self: , ) ->:
+def __init__ ( self: ,iceServers:  Optional[List[RTCIceServer]] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( gatherer: ,self: , ) ->:
+def __init__ ( gatherer:  RTCIceGatherer,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def iceGatherer ( self: , ) ->:
+def iceGatherer ( self: , ) ->RTCIceGatherer::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def role ( self: , ) ->:
+def role ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def state ( self: , ) ->:
+def state ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def addRemoteCandidate ( candidate: ,self: , ) ->:
+def addRemoteCandidate ( candidate:  Optional[RTCIceCandidate],self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __log_debug ( msg: ,self: ,*args: , ) ->:
+def __log_debug ( msg:  str,self: ,*args: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __setState ( self: ,state: , ) ->:
+def __setState ( self: ,state:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def find_common_codecs ( local_codecs: ,remote_codecs: , ) ->:
+def find_common_codecs ( local_codecs:  List[RTCRtpCodecParameters],remote_codecs:  List[RTCRtpCodecParameters], ) ->List[RTCRtpCodecParameters]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def find_common_header_extensions ( local_extensions: ,remote_extensions: , ) ->:
+def find_common_header_extensions ( local_extensions:  List[RTCRtpHeaderExtensionParameters],remote_extensions:  List[RTCRtpHeaderExtensionParameters], ) ->List[RTCRtpHeaderExtensionParameters]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def add_remote_candidates ( iceTransport: ,media: , ) ->:
+def add_remote_candidates ( iceTransport:  RTCIceTransport,media:  sdp.MediaDescription, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __createDtlsTransport ( self: , ) ->:
+def __createDtlsTransport ( self: , ) ->RTCDtlsTransport::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __createSctpTransport ( self: , ) ->:
+def __createSctpTransport ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __createTransceiver ( sender_track=None: ,kind: ,self: ,direction: , ) ->:
+def __createTransceiver ( sender_track=None: ,kind:  str,self: ,direction:  str, ) ->RTCRtpTransceiver::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __setSignalingState ( self: ,state: , ) ->:
+def __setSignalingState ( self: ,state:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __updateIceConnectionState ( self: , ) ->:
+def __updateIceConnectionState ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __updateIceGatheringState ( self: , ) ->:
+def __updateIceGatheringState ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __validate_description ( self: ,description: ,is_local: , ) ->:
+def __validate_description ( self: ,description:  sdp.SessionDescription,is_local:  bool, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( kind: ,self: ,transport: , ) ->:
+def __init__ ( kind:  str,self: ,transport: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def getCapabilities ( kind: ,self: , ) ->:
+def getCapabilities ( kind: ,self: , ) ->Optional[RTCRtpCapabilities]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def setTransport ( self: ,transport: , ) ->:
+def setTransport ( self: ,transport:  RTCDtlsTransport, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _set_rtcp_ssrc ( ssrc: ,self: , ) ->:
+def _set_rtcp_ssrc ( ssrc:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( self: ,trackOrKind: ,transport: , ) ->:
+def __init__ ( self: ,trackOrKind: ,transport: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def replaceTrack ( self: ,track: , ) ->:
+def replaceTrack ( self: ,track: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def setTransport ( self: ,transport: , ) ->:
+def setTransport ( self: ,transport: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def currentDirection ( self: , ) ->:
+def currentDirection ( self: , ) ->Optional[str]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def direction ( self: , ) ->:
+def direction ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def direction ( self: ,direction: , ) ->:
+def direction ( self: ,direction:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def kind ( self: , ) ->:
+def kind ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def mid ( self: , ) ->:
+def mid ( self: , ) ->Optional[str]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def receiver ( self: , ) ->:
+def receiver ( self: , ) ->RTCRtpReceiver::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def sender ( self: , ) ->:
+def sender ( self: , ) ->RTCRtpSender::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def stopped ( self: , ) ->:
+def stopped ( self: , ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def setCodecPreferences ( codecs: ,self: , ) ->:
+def setCodecPreferences ( codecs:  List[RTCRtpCodecCapability],self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def chunk_type ( chunk: , ) ->:
+def chunk_type ( chunk: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def encode_params ( params: , ) ->:
+def encode_params ( bytes]]: ,params:  List[Tuple[int, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def tsn_minus_one ( a: , ) ->:
+def tsn_minus_one ( a:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def tsn_plus_one ( a: , ) ->:
+def tsn_plus_one ( a:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( flags=0: ,body=b"": ,self: , ) ->:
+def __init__ ( flags:  int = 0,self: ,body:  bytes = b"", ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def body ( self: , ) ->:
+def body ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( flags=0: ,self: ,body=None: , ) ->:
+def __init__ ( flags:  int = 0,self: ,body:  Optional[bytes] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( flags=0: ,self: ,body=None: , ) ->:
+def __init__ ( flags:  int = 0,self: ,body:  Optional[bytes] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def body ( self: , ) ->:
+def body ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __init__ ( flags=0: ,self: ,body=None: , ) ->:
+def __init__ ( flags:  int = 0,self: ,body:  Optional[bytes] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def body ( self: , ) ->:
+def body ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def body ( self: , ) ->:
+def body ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def serialize_packet ( verification_tag: ,destination_port: ,source_port: ,chunk: , ) ->:
+def serialize_packet ( verification_tag:  int,destination_port:  int,source_port:  int,chunk:  Chunk, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def setTransport ( self: ,transport: , ) ->:
+def setTransport ( self: ,transport: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _flight_size_decrease ( self: ,chunk: , ) ->:
+def _flight_size_decrease ( self: ,chunk:  Chunk, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _flight_size_increase ( self: ,chunk: , ) ->:
+def _flight_size_increase ( self: ,chunk:  Chunk, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _set_extensions ( self: ,params: , ) ->:
+def _set_extensions ( bytes]]: ,self: ,params:  List[Tuple[int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _maybe_abandon ( self: ,chunk: , ) ->:
+def _maybe_abandon ( self: ,chunk:  Chunk, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _set_state ( self: ,state: , ) ->:
+def _set_state ( self: ,state: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t1_cancel ( self: , ) ->:
+def _t1_cancel ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t1_expired ( self: , ) ->:
+def _t1_expired ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t1_start ( self: ,chunk: , ) ->:
+def _t1_start ( self: ,chunk:  Chunk, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t2_cancel ( self: , ) ->:
+def _t2_cancel ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t2_expired ( self: , ) ->:
+def _t2_expired ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t2_start ( self: ,chunk: , ) ->:
+def _t2_start ( self: ,chunk: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t3_expired ( self: , ) ->:
+def _t3_expired ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t3_restart ( self: , ) ->:
+def _t3_restart ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t3_start ( self: , ) ->:
+def _t3_start ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _t3_cancel ( self: , ) ->:
+def _t3_cancel ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _update_advanced_peer_ack_point ( self: , ) ->:
+def _update_advanced_peer_ack_point ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _data_channel_closed ( stream_id: ,self: , ) ->:
+def _data_channel_closed ( stream_id:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _data_channel_add_negotiated ( channel: ,self: , ) ->:
+def _data_channel_add_negotiated ( channel:  RTCDataChannel,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def _data_channel_open ( channel: ,self: , ) ->:
+def _data_channel_open ( channel:  RTCDataChannel,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def is_rtcp ( msg: , ) ->:
+def is_rtcp ( msg:  bytes, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def parse ( data: ,count: ,cls: , ) ->:
+def parse ( data:  bytes,cls: , ) ->List[AnyRtcpPacket]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def parse_group ( type=str: ,dest: ,value: , ) ->:
+def parse_group ( type=str: ,dest:  List[GroupDescription],value:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def find_codec ( pt: , ) ->:
+def find_codec ( pt:  int, ) ->RTCRtpCodecParameters::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+def load ( name: , ) ->:
+def load ( name:  str, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: def85569ea51a14286128f6066334126ce45cac9
+def get_error_queue ( : , ) ->:
+def get_error_queue ( : , ) ->List[Tuple[str, str, str]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: def85569ea51a14286128f6066334126ce45cac9
+def text ( charp: , ) ->:
+def text ( charp: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def current_datetime ( : , ) ->:
+def current_datetime ( : , ) ->datetime.datetime::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def current_ms ( : , ) ->:
+def current_ms ( : , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def current_ntp_time ( : , ) ->:
+def current_ntp_time ( : , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def datetime_from_ntp ( ntp: , ) ->:
+def datetime_from_ntp ( ntp:  int, ) ->datetime.datetime::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def datetime_to_ntp ( dt: , ) ->:
+def datetime_to_ntp ( dt:  datetime.datetime, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def init_codecs ( : , ) ->:
+def init_codecs ( : , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def add_video_codec ( mimeType: ,parameters=None: , ) ->:
+def add_video_codec ( mimeType:  str,parameters:  Optional[OrderedDict] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def depayload ( codec: ,payload: , ) ->:
+def depayload ( codec:  RTCRtpCodecParameters,payload:  bytes, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def is_rtx ( codec: , ) ->:
+def is_rtx ( codec:  RTCRtpCodecParameters, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def decode ( self: ,encoded_frame: , ) ->:
+def decode ( self: ,encoded_frame:  JitterFrame, ) ->List[AudioFrame]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def encode ( force_keyframe=False: ,self: ,frame: , ) ->:
+def encode ( self: ,force_keyframe:  bool = False,frame:  AudioFrame, ) ->Tuple[List[bytes], int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def pairwise ( iterable: , ) ->:
+def pairwise ( iterable:  Sequence[T], ) ->Iterator[Tuple[T, T]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def parse ( data: ,cls: , ) ->:
+def parse ( data:  bytes,cls:  Type[DESCRIPTOR_T], ) ->Tuple[DESCRIPTOR_T, bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def decode ( self: ,encoded_frame: , ) ->:
+def decode ( self: ,encoded_frame:  JitterFrame, ) ->List[av.VideoFrame]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _packetize_fu_a ( data: , ) ->:
+def _packetize_fu_a ( data:  bytes, ) ->List[bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _packetize_stap_a ( data: ,packages_iterator: , ) ->:
+def _packetize_stap_a ( data:  bytes,packages_iterator:  Iterator[bytes], ) ->Tuple[bytes, bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _split_bitstream ( buf: , ) ->:
+def _split_bitstream ( buf:  bytes, ) ->Iterator[bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _packetize ( cls: ,packages: , ) ->:
+def _packetize ( cls: ,packages:  Iterator[bytes], ) ->List[bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _encode_frame ( self: ,force_keyframe: ,frame: , ) ->:
+def _encode_frame ( self: ,force_keyframe:  bool,frame:  av.VideoFrame, ) ->Iterator[bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def encode ( force_keyframe=False: ,self: ,frame: , ) ->:
+def encode ( self: ,force_keyframe:  bool = False,frame:  av.VideoFrame, ) ->Tuple[List[bytes], int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def h264_depayload ( payload: , ) ->:
+def h264_depayload ( payload:  bytes, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __del__ ( self: , ) ->:
+def __del__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def decode ( self: ,encoded_frame: , ) ->:
+def decode ( self: ,encoded_frame:  JitterFrame, ) ->List[AudioFrame]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __del__ ( self: , ) ->:
+def __del__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def encode ( force_keyframe=False: ,self: ,frame: , ) ->:
+def encode ( self: ,force_keyframe:  bool = False,frame:  AudioFrame, ) ->Tuple[List[bytes], int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def number_of_threads ( pixels: ,cpus: , ) ->:
+def number_of_threads ( pixels:  int,cpus:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __bytes__ ( self: , ) ->:
+def __bytes__ ( self: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def parse ( data: ,cls: , ) ->:
+def parse ( data:  bytes,cls:  Type[DESCRIPTOR_T], ) ->Tuple[DESCRIPTOR_T, bytes]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _vpx_assert ( err: , ) ->:
+def _vpx_assert ( err:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __del__ ( self: , ) ->:
+def __del__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def decode ( self: ,encoded_frame: , ) ->:
+def decode ( self: ,encoded_frame:  JitterFrame, ) ->List[VideoFrame]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __del__ ( self: , ) ->:
+def __del__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def encode ( force_keyframe=False: ,self: ,frame: , ) ->:
+def encode ( self: ,force_keyframe:  bool = False,frame:  VideoFrame, ) ->Tuple[List[bytes], int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def target_bitrate ( self: , ) ->:
+def target_bitrate ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def target_bitrate ( self: ,bitrate: , ) ->:
+def target_bitrate ( self: ,bitrate:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __update_config ( self: , ) ->:
+def __update_config ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def vp8_depayload ( payload: , ) ->:
+def vp8_depayload ( payload:  bytes, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( data: ,self: ,timestamp: , ) ->:
+def __init__ ( data:  bytes,self: ,timestamp:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: ,prefetch=0: ,capacity: , ) ->:
+def __init__ ( prefetch:  int = 0,self: ,capacity:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def capacity ( self: , ) ->:
+def capacity ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def add ( self: ,packet: , ) ->:
+def add ( self: ,packet:  RtpPacket, ) ->Optional[JitterFrame]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _remove_frame ( sequence_number: ,self: , ) ->:
+def _remove_frame ( sequence_number:  int,self: , ) ->Optional[JitterFrame]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def remove ( count: ,self: , ) ->:
+def remove ( count:  int,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def convert_timebase ( from_base: ,to_base: ,pts: , ) ->:
+def convert_timebase ( from_base:  fractions.Fraction,to_base:  fractions.Fraction,pts:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def feedback_interval ( self: , ) ->:
+def feedback_interval ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def set_estimate ( now_ms:  int,self: ,bitrate:  int, ) ->:
+def set_estimate ( now_ms:  int,self: ,bitrate:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _additive_rate_increase ( now_ms: ,self: ,last_ms: , ) ->:
+def _additive_rate_increase ( now_ms:  int,self: ,last_ms:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _clamp_bitrate ( estimated_throughput: ,self: ,new_bitrate: , ) ->:
+def _clamp_bitrate ( estimated_throughput:  int,self: ,new_bitrate:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _multiplicative_rate_increase ( now_ms: ,self: ,new_bitrate: ,last_ms: , ) ->:
+def _multiplicative_rate_increase ( now_ms:  int,self: ,new_bitrate:  int,last_ms:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _near_max_rate_increase ( self: , ) ->:
+def _near_max_rate_increase ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _update_max_throughput_estimate ( self: ,estimated_throughput_kbps: , ) ->:
+def _update_max_throughput_estimate ( self: ,estimated_throughput_kbps: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _openssl_assert ( ok: , ) ->:
+def _openssl_assert ( ok:  bool, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def certificate_digest ( x509: , ) ->:
+def certificate_digest ( x509: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: ,cert: ,key: , ) ->:
+def __init__ ( self: ,cert: ,key: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def expires ( self: , ) ->:
+def expires ( self: , ) ->datetime.datetime::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def getFingerprints ( self: , ) ->:
+def getFingerprints ( self: , ) ->List[RTCDtlsFingerprint]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def generateCertificate ( cls: , ) ->:
+def generateCertificate ( cls:  Type[CERTIFICATE_T], ) ->CERTIFICATE_T::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def candidate_from_aioice ( x: , ) ->:
+def candidate_from_aioice ( x:  Candidate, ) ->RTCIceCandidate::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def candidate_to_aioice ( x: , ) ->:
+def candidate_to_aioice ( x:  RTCIceCandidate, ) ->Candidate::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def state ( self: , ) ->:
+def state ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def getDefaultIceServers ( cls: , ) ->:
+def getDefaultIceServers ( cls: , ) ->List[RTCIceServer]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def getLocalCandidates ( self: , ) ->:
+def getLocalCandidates ( self: , ) ->List[RTCIceCandidate]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def getLocalParameters ( self: , ) ->:
+def getLocalParameters ( self: , ) ->RTCIceParameters::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __setState ( self: ,state: , ) ->:
+def __setState ( self: ,state:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def filter_preferred_codecs ( codecs: ,preferred: , ) ->:
+def filter_preferred_codecs ( codecs:  List[RTCRtpCodecParameters],preferred:  List[RTCRtpCodecParameters], ) ->List[RTCRtpCodecParameters]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def add_transport_description ( dtlsTransport: ,media: , ) ->:
+def add_transport_description ( dtlsTransport:  RTCDtlsTransport,media:  sdp.MediaDescription, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def allocate_mid ( mids: , ) ->:
+def allocate_mid ( mids:  Set[str], ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def create_media_description_for_sctp ( legacy: ,sctp: ,mid: , ) ->:
+def create_media_description_for_sctp ( legacy:  bool,sctp:  RTCSctpTransport,mid:  str, ) ->sdp.MediaDescription::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def create_media_description_for_transceiver ( transceiver: ,cname: ,mid: ,direction: , ) ->:
+def create_media_description_for_transceiver ( transceiver:  RTCRtpTransceiver,cname:  str,mid:  str,direction:  str, ) ->sdp.MediaDescription::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def and_direction ( a: ,b: , ) ->:
+def and_direction ( a:  str,b:  str, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def or_direction ( a: ,b: , ) ->:
+def or_direction ( a:  str,b:  str, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def reverse_direction ( direction: , ) ->:
+def reverse_direction ( direction:  str, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def wrap_session_description ( session_description:  sdp.SessionDescription, ) ->:
+def wrap_session_description ( session_description:  Optional[sdp.SessionDescription], ) ->Optional[RTCSessionDescription]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( configuration=None: ,self: , ) ->:
+def __init__ ( configuration:  Optional[RTCConfiguration] = None,self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def iceConnectionState ( self: , ) ->:
+def iceConnectionState ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def iceGatheringState ( self: , ) ->:
+def iceGatheringState ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def localDescription ( self: , ) ->:
+def localDescription ( self: , ) ->RTCSessionDescription::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def remoteDescription ( self: , ) ->:
+def remoteDescription ( self: , ) ->RTCSessionDescription::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def sctp ( self: , ) ->:
+def sctp ( self: , ) ->Optional[RTCSctpTransport]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def get_media ( description: , ) ->:
+def get_media ( description:  sdp.SessionDescription, ) ->List[sdp.MediaDescription]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def get_media_section ( i: ,media: , ) ->:
+def get_media_section ( i:  int,media:  List[sdp.MediaDescription], ) ->Optional[sdp.MediaDescription]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def next_mline_index ( : , ) ->:
+def next_mline_index ( : , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __assertNotClosed ( self: , ) ->:
+def __assertNotClosed ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __getTransceiverByMid ( self: ,mid: , ) ->:
+def __getTransceiverByMid ( self: ,mid:  str, ) ->Optional[RTCRtpTransceiver]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __getTransceiverByMLineIndex ( self: ,index: , ) ->:
+def __getTransceiverByMLineIndex ( self: ,index:  int, ) ->Optional[RTCRtpTransceiver]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __localDescription ( self: , ) ->:
+def __localDescription ( self: , ) ->Optional[sdp.SessionDescription]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __localRtp ( transceiver: ,self: , ) ->:
+def __localRtp ( transceiver:  RTCRtpTransceiver,self: , ) ->RTCRtpParameters::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __remoteDescription ( self: , ) ->:
+def __remoteDescription ( self: , ) ->Optional[sdp.SessionDescription]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __remoteRtp ( transceiver: ,self: , ) ->:
+def __remoteRtp ( transceiver:  RTCRtpTransceiver,self: , ) ->RTCRtpReceiveParameters::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def add ( self: ,packet: , ) ->:
+def add ( self: ,packet:  RtpPacket, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: ,clockrate: , ) ->:
+def __init__ ( self: ,clockrate:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def add ( self: ,packet: , ) ->:
+def add ( self: ,packet:  RtpPacket, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def fraction_lost ( self: , ) ->:
+def fraction_lost ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def jitter ( self: , ) ->:
+def jitter ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def packets_expected ( self: , ) ->:
+def packets_expected ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def packets_lost ( self: , ) ->:
+def packets_lost ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def map ( self: ,timestamp: , ) ->:
+def map ( self: ,timestamp:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __log_debug ( msg: ,self: ,*args: , ) ->:
+def __log_debug ( msg:  str,self: ,*args: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __log_debug ( msg: ,self: ,*args: , ) ->:
+def __log_debug ( msg:  str,self: ,*args: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _set_mid ( self: ,mid: , ) ->:
+def _set_mid ( self: ,mid:  str, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _get_mline_index ( self: , ) ->:
+def _get_mline_index ( self: , ) ->Optional[int]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def _set_mline_index ( self: ,idx: , ) ->:
+def _set_mline_index ( self: ,idx:  int, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def decode_params ( body: , ) ->:
+def decode_params ( body:  bytes, ) ->List[Tuple[int, bytes]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def padl ( l: , ) ->:
+def padl ( l:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( flags=0: ,self: ,body=None: , ) ->:
+def __init__ ( flags:  int = 0,self: ,body:  Optional[bytes] = None, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def parse_packet ( data: , ) ->:
+def parse_packet ( data:  bytes, ) ->Tuple[int, int, int, List[Any]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def is_server ( self: , ) ->:
+def is_server ( self: , ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def port ( self: , ) ->:
+def port ( self: , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def state ( self: , ) ->:
+def state ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def getCapabilities ( cls: , ) ->:
+def getCapabilities ( cls: , ) ->RTCSctpCapabilities::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def configure ( self: ,parameters:  RTCRtpParameters, ) ->:
+def configure ( self: ,parameters:  RTCRtpParameters, ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def clamp_packets_lost ( count: , ) ->:
+def clamp_packets_lost ( count:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def pack_packets_lost ( count: , ) ->:
+def pack_packets_lost ( count:  int, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def unpack_packets_lost ( d: , ) ->:
+def unpack_packets_lost ( d:  bytes, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def pack_rtcp_packet ( payload: ,count: ,packet_type: , ) ->:
+def pack_rtcp_packet ( payload:  bytes,count:  int,packet_type:  int, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def pack_remb_fci ( ssrcs: ,bitrate: , ) ->:
+def pack_remb_fci ( ssrcs:  List[int],bitrate:  int, ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __repr__ ( self: , ) ->:
+def __repr__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def serialize ( self: ,extensions_map=HeaderExtensionsMap(: , ) ->:
+def serialize ( self: ,extensions_map=HeaderExtensionsMap(: , ) ->bytes::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def unwrap_rtx ( payload_type: ,rtx: ,ssrc: , ) ->:
+def unwrap_rtx ( payload_type:  int,rtx:  RtpPacket,ssrc:  int, ) ->RtpPacket::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def wrap_rtx ( sequence_number: ,payload_type: ,ssrc: ,packet: , ) ->:
+def wrap_rtx ( sequence_number:  int,payload_type:  int,ssrc:  int,packet:  RtpPacket, ) ->RtpPacket::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def candidate_from_sdp ( sdp: , ) ->:
+def candidate_from_sdp ( sdp:  str, ) ->RTCIceCandidate::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def candidate_to_sdp ( candidate: , ) ->:
+def candidate_to_sdp ( candidate:  RTCIceCandidate, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def grouplines ( sdp: , ) ->:
+def grouplines ( sdp:  str, ) ->Tuple[List[str], List[List[str]]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def ipaddress_from_sdp ( sdp: , ) ->:
+def ipaddress_from_sdp ( sdp:  str, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def ipaddress_to_sdp ( addr: , ) ->:
+def ipaddress_to_sdp ( addr:  str, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def parameters_from_sdp ( sdp: , ) ->:
+def parameters_from_sdp ( sdp:  str, ) ->OrderedDict::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def parameters_to_sdp ( parameters: , ) ->:
+def parameters_to_sdp ( parameters:  OrderedDict, ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def parse_attr ( line: , ) ->:
+def parse_attr ( line:  str, ) ->Tuple[str, Optional[str]]::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __str__ ( self: , ) ->:
+def __str__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( port: ,kind: ,profile: ,self: ,fmt: , ) ->:
+def __init__ ( port:  int,kind:  str,profile:  str,self: ,fmt:  List[Any], ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __str__ ( self: , ) ->:
+def __str__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __init__ ( self: , ) ->:
+def __init__ ( self: , ) ->None::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: fb7ddcc829102fab34be71c529e1a323c2f9b516
+def __str__ ( self: , ) ->:
+def __str__ ( self: , ) ->str::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: b175154fb618f2062ca62f279d1d6c392c980ce2
+def get ( extension_value: ,self: ,extension_profile: , ) ->:
+def get ( extension_value:  bytes,self: ,extension_profile:  int, ) ->HeaderExtensions::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: b175154fb618f2062ca62f279d1d6c392c980ce2
+def padl ( l: , ) ->:
+def padl ( l:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def random16 ( : , ) ->:
+def random16 ( : , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def random32 ( : , ) ->:
+def random32 ( : , ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def uint16_add ( a: ,b: , ) ->:
+def uint16_add ( a:  int,b:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def uint16_gt ( a: ,b: , ) ->:
+def uint16_gt ( a:  int,b:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def uint16_gte ( a: ,b: , ) ->:
+def uint16_gte ( a:  int,b:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def uint32_add ( a: ,b: , ) ->:
+def uint32_add ( a:  int,b:  int, ) ->int::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def uint32_gt ( a: ,b: , ) ->:
+def uint32_gt ( a:  int,b:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info------------------------------------------------------------------------------------------------start
+Commit ID: ea4293211a45e27a1b8e87460e2e933d8f356a50
+def uint32_gte ( a: ,b: , ) ->:
+def uint32_gte ( a:  int,b:  int, ) ->bool::
+type hint info------------------------------------------------------------------------------------------------end
+type hint info==============
+[:   Mon Nov 4 14:13:56 2019 +0100 ,commit id: 6f752d1f1c575db477c63167b85508d807db463d
+, :   Mon Nov 4 12:48:58 2019 +0100 ,commit id: ddf5798f2432f4b2e4bc00691a766f464275e9fa
+, :   Mon Nov 4 09:00:25 2019 +0100 ,commit id: 4c79547718f97e063240b087fc14c0a350f2c02c
+, :   Sat Nov 2 22:33:21 2019 +0100 ,commit id: ab5906e63bde7e042edbb3811a38ee6ae56646f5
+, :   Sat Nov 2 22:12:37 2019 +0100 ,commit id: def85569ea51a14286128f6066334126ce45cac9
+, :   Wed Oct 30 19:33:25 2019 +0100 ,commit id: fb7ddcc829102fab34be71c529e1a323c2f9b516
+, :   Sun Dec 9 17:18:39 2018 +0100 ,commit id: 29f5b7629ec1e406d55bd05b94c5ab09bb1843c4
+, :   Tue Sep 18 00:19:54 2018 +0200 ,commit id: b175154fb618f2062ca62f279d1d6c392c980ce2
+, :   Sat Sep 15 22:10:05 2018 +0200 ,commit id: ea4293211a45e27a1b8e87460e2e933d8f356a50
+]
+
+Process finished with exit code 0
